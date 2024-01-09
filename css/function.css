@@ -1,0 +1,205 @@
+/* 開闔 */
+
+.collapse__Btn {
+    cursor: pointer;
+}
+
+.collapse__Content {
+    transition: max-height .3s;
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+/* popUP */
+
+.popUp__Btn {
+    cursor: pointer;
+}
+
+.popUp__Content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.8);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    /* cursor: pointer; */
+    overflow-y: scroll;
+}
+
+.popUp__Content .popUp__Innerbox {
+    width: 90%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 0%;
+    transform: translateX(-50%);
+    margin-top: 3%;
+}
+
+.popUp__Content .popUp__Innerbox img {
+    width: 100%;
+    /* position: relative; */
+}
+
+.popUp__Content.popUp--active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.closeBox {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    z-index: 99;
+    /* width: 50px;
+    height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.closeBtn {
+    font-size: 50px;
+    transition: all 0.3s;
+    color: #fff;
+}
+
+.closeBox:hover>.closeBtn {
+    transform: rotate(90deg);
+}
+
+
+/* 關閉按鈕顏色 */
+
+.closeBox1 {
+    background: #fff;
+    color: #F6651B;
+}
+
+.closeBox1:hover {
+    background: #F6651B;
+    color: #fff;
+}
+
+.closeBox2 {
+    background: #fff;
+    color: #0c659e;
+}
+
+.closeBox2:hover {
+    background: #0c659e;
+    color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+    .closeBox {
+        width: 40px;
+        height: 40px;
+    }
+
+    .closeBtn {
+        font-size: 40px;
+    }
+}
+
+.swiper-3d .swiper-slide-shadow {
+    background: transparent;
+}
+
+
+/* 打勾 */
+
+#tick1.tickbox {
+    width: 46px;
+    height: 46px;
+    /* border: 2px solid #22ff00; */
+    position: absolute;
+    top: 84%;
+    left: 26%;
+}
+
+#tick2.tickbox {
+    width: 46px;
+    height: 46px;
+    /* border: 2px solid #22ff00; */
+    position: absolute;
+    top: 91%;
+    left: 26%;
+}
+
+#tick3.tickbox {
+    width: 46px;
+    height: 46px;
+    /* border: 2px solid #22ff00; */
+    position: absolute;
+    top: 95%;
+    left: 26%;
+}
+
+.tickL {
+    position: absolute;
+    top: 39%;
+    left: 9%;
+    width: 60%;
+    max-width: 0px;
+    height: 14%;
+    background: #ff1f1f;
+    border-radius: 10px;
+    transform: rotate(60deg);
+    transform-origin: left center;
+}
+
+.tickR {
+    position: absolute;
+    top: 91%;
+    left: 35%;
+    width: 132%;
+    max-width: 0px;
+    height: 14%;
+    background: #ff1f1f;
+    border-radius: 10px;
+    transform: rotate(-50deg);
+    transform-origin: left center;
+}
+
+.tickbox.check .tickL {
+    transition: all .1s;
+    max-width: 60%;
+    transition-timing-function: linear;
+}
+
+.tickbox.check .tickR {
+    transition: all .1s;
+    max-width: 132%;
+    transition-timing-function: linear;
+    transition-delay: .1s;
+}
+
+#tick2 .tickbox.check .tickL,
+#tick2 .tickbox.check .tickR {
+    transition-delay: 5s;
+}
+
+@media (max-width:1000px) {
+
+    #tick1.tickbox,
+    #tick2.tickbox,
+    #tick3.tickbox {
+        width: 5vw;
+        height: 5vw;
+    }
+}
